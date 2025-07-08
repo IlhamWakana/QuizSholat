@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://0ea0j315b7b2"]
+
+[sub_resource type="GDScript" id="GDScript_tbxjc"]
+script/source = "extends Control
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Main.tscn\")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/doa_harian.tscn\")
+
+
+func _on_button_3_pressed() -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbxjc"]
+bg_color = Color(1.07813e-05, 0.175878, 0.530928, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esrtn"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 15
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_f1li5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh8xy"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 15
+
+[node name="Pilihan" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_tbxjc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.0
+offset_top = -359.0
+offset_right = 639.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.215686, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.5
+offset_top = -188.5
+offset_right = 427.5
+offset_bottom = 188.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbxjc")
+text = "
+
+Panduan Sholat
+
+
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_esrtn")
+text = "
+
+Doa Harian
+
+
+"
+icon = SubResource("ViewportTexture_f1li5")
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kh8xy")
+text = "
+
+Kembali
+
+
+"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
