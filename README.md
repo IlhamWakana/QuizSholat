@@ -1,4 +1,4 @@
-Game untuk mengetest seberapa tersesat anda
+Game untuk mengetest seberapa tersesat anda oleh  
 Korkut software.nzxt
 
 Moch. Atur Akbar Loredo Hariyanto Putra ||2213020006
