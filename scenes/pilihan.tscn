@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ea0j315b7b2"]
+[gd_scene load_steps=7 format=3 uid="uid://0ea0j315b7b2"]
+
+[ext_resource type="Texture2D" uid="uid://u0gxp1n02oh0" path="res://assets/images/WhatsApp Image 2025-07-08 at 15.01.24_1f8ce3f7.jpg" id="1_esrtn"]
 
 [sub_resource type="GDScript" id="GDScript_tbxjc"]
 script/source = "extends Control
@@ -7,13 +9,11 @@ script/source = "extends Control
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/Main.tscn\")
 
-
 func _on_button_2_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/doa_harian.tscn\")
-
+	get_tree().change_scene_to_file(\"res://scenes/kumpulan_doa.tscn\")
 
 func _on_button_3_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(\"res://scenes/main_menu.tscn\")
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbxjc"]
@@ -51,20 +51,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_tbxjc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -639.0
-offset_top = -359.0
-offset_right = 639.0
-offset_bottom = 359.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.215686, 1, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 1280.0
+offset_bottom = 767.0
+texture = ExtResource("1_esrtn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -73,44 +66,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -427.5
-offset_top = -188.5
-offset_right = 427.5
-offset_bottom = 188.5
+offset_left = -224.0
+offset_top = -110.0
+offset_right = 208.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_tbxjc")
-text = "
-
-Panduan Sholat
-
-
-"
+text = "Quiz Sholat"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_esrtn")
-text = "
-
-Doa Harian
-
-
-"
+text = "Doa Harian"
 icon = SubResource("ViewportTexture_f1li5")
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_kh8xy")
-text = "
-
-Kembali
-
-
-"
+text = "Kembali"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

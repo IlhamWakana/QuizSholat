@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb7jbbuaq8ich"]
+[gd_scene load_steps=9 format=3 uid="uid://bb7jbbuaq8ich"]
 
 [ext_resource type="Script" uid="uid://cvyhsqh1hlf73" path="res://scenes/Main.gd" id="1_wuq2g"]
 [ext_resource type="Texture2D" uid="uid://ct0730xrvvcei" path="res://assets/images/01.png" id="2_nu2dp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxtc6"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bbpv"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rarhs"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvslj"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcsgt"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01mt"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +30,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wuq2g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 719.0
 
 [node name="BG_ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -22,7 +46,6 @@ grow_vertical = 2
 color = Color(0.72549, 0.807843, 1, 1)
 
 [node name="AnswersList" type="ItemList" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -37,6 +60,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
+theme_override_styles/cursor = SubResource("StyleBoxFlat_nxtc6")
 allow_reselect = true
 item_count = 4
 same_column_width = true
@@ -59,8 +83,19 @@ offset_right = 100.0
 offset_bottom = -345.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-text = "Restart"
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bbpv")
+text = "Mulai Lagi"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 379.0
+offset_right = 740.0
+offset_bottom = 428.0
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_rarhs")
+text = "Kembali Ke Menu"
 
 [node name="RestartButtonAlways" type="Button" parent="."]
 layout_mode = 1
@@ -76,6 +111,7 @@ offset_bottom = -13.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rvslj")
 text = "Restart"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -94,11 +130,12 @@ grow_horizontal = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "question texts"
+text = "Pertanyaan"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ImageRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -126,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "Wrong"
+text = "Salah"
 
 [node name="ScoreNumber" type="Label" parent="."]
 layout_mode = 1
@@ -143,7 +180,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-text = "Score"
+text = "Skor"
 
 [node name="CorrectAnswer" type="Label" parent="."]
 layout_mode = 1
@@ -160,7 +197,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
 theme_override_font_sizes/font_size = 32
-text = "The correct answer is:"
+text = "Jawaban yang benar adalah:"
 
 [node name="OK" type="Button" parent="."]
 layout_mode = 1
@@ -176,7 +213,8 @@ offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
-text = "Okie, got it!"
+theme_override_styles/normal = SubResource("StyleBoxFlat_vcsgt")
+text = "Lanjutkan"
 
 [node name="Correct" type="Button" parent="."]
 layout_mode = 1
@@ -192,10 +230,12 @@ offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
-text = "Congratulations! You're correct."
+theme_override_styles/normal = SubResource("StyleBoxFlat_c01mt")
+text = "Mantap!! Kamu benar sekali"
 
 [connection signal="item_selected" from="AnswersList" to="." method="_on_answers_list_item_selected"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="RestartButtonAlways" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Correct" to="." method="_on_correct_pressed"]

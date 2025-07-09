@@ -1,31 +1,87 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb8nmxim7rn15"]
+[gd_scene load_steps=13 format=3 uid="uid://bb8nmxim7rn15"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dvcxoq475yxel" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://u0gxp1n02oh0" path="res://assets/images/WhatsApp Image 2025-07-08 at 15.01.24_1f8ce3f7.jpg" id="2_ekxnf"]
+
+[sub_resource type="FontFile" id="FontFile_ekxnf"]
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [sub_resource type="Theme" id="Theme_7vrkn"]
 Button/colors/font_color = Color(0.752941, 0.929412, 0.933333, 1)
 Button/colors/font_focus_color = Color(0.82164, 0.994512, 0.95004, 1)
 Button/colors/font_hover_pressed_color = Color(0.862881, 0.907035, 0.987832, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0, 0.176471, 0.529412, 1)
+
 [node name="MainMenu" type="Node2D"]
 position = Vector2(86, 97)
 script = ExtResource("1_l6cm7")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -88.0
+offset_top = -97.0
+offset_right = 1193.0
+offset_bottom = 671.0
+texture = ExtResource("2_ekxnf")
+
 [node name="Title" type="Label" parent="."]
+modulate = Color(0.165449, 0.917895, 0.847634, 1)
 offset_left = -85.0
 offset_top = -104.0
 offset_right = 1200.0
 offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.904324, 0.907522, 0.920575, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 50
+theme_override_constants/paragraph_spacing = 10
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = SubResource("FontFile_ekxnf")
 theme_override_font_sizes/font_size = 70
 text = "Quiz Sholat"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-offset_left = -79.0
-offset_top = -103.0
-offset_right = 1191.0
-offset_bottom = 617.0
+offset_left = -84.0
+offset_top = 173.0
+offset_right = 1186.0
+offset_bottom = 657.0
 theme = SubResource("Theme_7vrkn")
 
 [node name="mainButtons" type="VBoxContainer" parent="CenterContainer"]
@@ -33,23 +89,29 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="MULAI" type="Button" parent="CenterContainer/mainButtons"]
+show_behind_parent = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 text = "MULAI"
 
 [node name="PENGATURAN" type="Button" parent="CenterContainer/mainButtons"]
+visibility_layer = 4
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 text = "PENGATURAN"
 
 [node name="CREDITS" type="Button" parent="CenterContainer/mainButtons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
 text = "CREDITS"
 
 [node name="KELUAR" type="Button" parent="CenterContainer/mainButtons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 text = "KELUAR"
 
 [node name="MenuPengaturan" type="VBoxContainer" parent="CenterContainer"]
@@ -62,11 +124,13 @@ custom_minimum_size = Vector2(353, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
 text = "kembali"
 
 [node name="mainHSlider" type="HSlider" parent="CenterContainer/MenuPengaturan"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_oa1go")
 max_value = 0.5
 step = 0.001
 
@@ -82,6 +146,7 @@ horizontal_alignment = 1
 [node name="musicHSlider" type="HSlider" parent="CenterContainer/MenuPengaturan"]
 custom_minimum_size = Vector2(0, 105)
 layout_mode = 2
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_tbmy8")
 max_value = 0.5
 step = 0.001
 
@@ -97,6 +162,7 @@ horizontal_alignment = 1
 [node name="sfxHSlider" type="HSlider" parent="CenterContainer/MenuPengaturan"]
 custom_minimum_size = Vector2(0, 105)
 layout_mode = 2
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_jk1qb")
 max_value = 0.5
 step = 0.001
 
@@ -113,6 +179,30 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/MenuCredits"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MenuCredits/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MenuCredits/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/MenuCredits/ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuCredits/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MenuCredits/ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuCredits/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MenuCredits/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="Label" type="Label" parent="CenterContainer/MenuCredits"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
@@ -127,21 +217,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 80
 text = "kembali"
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -4096
-offset_left = -83.0
-offset_top = -102.0
-offset_right = 1191.0
-offset_bottom = 626.0
-mouse_filter = 2
-color = Color(0.256636, 0.395034, 0.754292, 1)
-
-[node name="GameSholat" type="Node2D" parent="."]
-
-[node name="Player" type="AnimatedSprite2D" parent="GameSholat"]
-
-[node name="UI" type="CanvasLayer" parent="GameSholat"]
 
 [connection signal="pressed" from="CenterContainer/mainButtons/MULAI" to="." method="_on_mulai_pressed"]
 [connection signal="pressed" from="CenterContainer/mainButtons/PENGATURAN" to="." method="_on_pengaturan_pressed"]

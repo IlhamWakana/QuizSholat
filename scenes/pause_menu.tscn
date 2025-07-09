@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnfv2dfnvsdju"]
+
+[ext_resource type="Shader" uid="uid://cvq1heyt4jabl" path="res://scripts/pause_menu.gdshader" id="1_n87rw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wyi4u"]
+resource_local_to_scene = true
+shader = ExtResource("1_n87rw")
+shader_parameter/lod = 3.655
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_myx47"]
+shader = ExtResource("1_n87rw")
+shader_parameter/lod = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
+shader = ExtResource("1_n87rw")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_kukqi"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5d2l8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7l7mv"]
+_data = {
+&"RESET": SubResource("Animation_5d2l8"),
+&"blur": SubResource("Animation_kukqi")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+material = SubResource("ShaderMaterial_wyi4u")
+use_parent_material = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_myx47")
+layout_mode = 0
+offset_right = 1278.0
+offset_bottom = 719.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -199.0
+offset_right = 211.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+material = SubResource("ShaderMaterial_nwcfo")
+layout_mode = 2
+
+[node name="Lanjutkan" type="Button" parent="PanelContainer/VBoxContainer"]
+clip_contents = true
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 4
+text = "
+Lanjutkan
+
+"
+
+[node name="ulangi" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "
+Ulangi
+
+"
+
+[node name="keluar" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "
+Keluar
+
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7l7mv")
+}

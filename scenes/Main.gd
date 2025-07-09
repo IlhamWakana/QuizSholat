@@ -25,8 +25,8 @@ func _ready():
 	displayScore()
 
 func displayScore():
-	WrongNumber.text = "Wrong: " + str(wrong)
-	ScoreNumber.text = "Score: " + str(correct)+"/"+str(items.size())
+	WrongNumber.text = "Salah: " + str(wrong)
+	ScoreNumber.text = "Skor: " + str(correct)+"/"+str(items.size())
 
 func show_questions():
 	CorrectAnswer.hide()
@@ -66,10 +66,10 @@ func show_result():
 	var percentage = round(correct/items.size()*100)
 	var greet
 	if percentage >= 60:
-		greet = "Very good!"
+		greet = "Sangat Bagus!"
 	else:
-		greet = "Too bad!"
-	QuestionItems.text = "{greet} You're correct {percentage} %".format({"greet": greet, "percentage": percentage})
+		greet = "Apa ini sangat jelek sekali!"
+	QuestionItems.text = "{greet} Kamu benar sekian {percentage} %".format({"greet": greet, "percentage": percentage})
 
 func refresh_scene():
 	if index_item >= items.size():
@@ -93,7 +93,7 @@ func show_correct_answer():
 	Congratulation.hide()
 	WrongNumber.show()
 	item = items[index_item]
-	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]
+	CorrectAnswer.text = "Jawaban yang benar adalah: " + item.options[updatedCorrectAnswerIndex]
 
 func show_congratulations():
 	AnswersList.hide()
@@ -105,7 +105,7 @@ func show_congratulations():
 	Congratulation.show()
 	WrongNumber.show()
 	item = items[index_item]
-	CorrectAnswer.text = "The correct answer is: " + item.options[updatedCorrectAnswerIndex]
+	CorrectAnswer.text = "Jawaban yang benar adalah: " + item.options[updatedCorrectAnswerIndex]
 
 func _on_ok_pressed():
 	index_item +=1
@@ -125,3 +125,6 @@ func _on_answers_list_item_selected(index):
 		
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/pilihan.tscn")
