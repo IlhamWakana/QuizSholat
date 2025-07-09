@@ -1,1 +1,1 @@
-Game test kekafiran anda
+Game untuk mengetest seberapa tersesat anda
