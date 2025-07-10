@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsdhfbxoyqwue"
+path="res://.godot/imported/Doa masuk masjid.mp3-8acec02d98241d0ab1d2d49ca2f74bcf.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Doa-doa/Doa masuk masjid.mp3"
+dest_files=["res://.godot/imported/Doa masuk masjid.mp3-8acec02d98241d0ab1d2d49ca2f74bcf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

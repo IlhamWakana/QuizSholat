@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j15prasfog83"
+path="res://.godot/imported/Doa selamat.mp3-1fe23d5e3136bf168598b828ca6fc278.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Doa-doa/Doa selamat.mp3"
+dest_files=["res://.godot/imported/Doa selamat.mp3-1fe23d5e3136bf168598b828ca6fc278.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

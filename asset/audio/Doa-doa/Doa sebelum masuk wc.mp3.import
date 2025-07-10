@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bskwc3wfubiss"
+path="res://.godot/imported/Doa sebelum masuk wc.mp3-c7799dd766d32954f0d8b612f84e1f33.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Doa-doa/Doa sebelum masuk wc.mp3"
+dest_files=["res://.godot/imported/Doa sebelum masuk wc.mp3-c7799dd766d32954f0d8b612f84e1f33.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
