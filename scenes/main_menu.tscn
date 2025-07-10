@@ -1,7 +1,41 @@
 [gd_scene load_steps=13 format=3 uid="uid://bb8nmxim7rn15"]
 
-[ext_resource type="Script" uid="uid://dvcxoq475yxel" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://u0gxp1n02oh0" path="res://assets/images/WhatsApp Image 2025-07-08 at 15.01.24_1f8ce3f7.jpg" id="2_ekxnf"]
+
+[sub_resource type="GDScript" id="GDScript_l6cm7"]
+script/source = "extends Node2D
+
+
+func _on_mulai_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/pilihan.tscn\")
+
+
+func _on_pengaturan_pressed() -> void:
+	$CenterContainer/mainButtons.visible = false
+	$CenterContainer/MenuPengaturan.visible = true
+
+
+func _on_crediits_pressed() -> void:
+	$CenterContainer/mainButtons.visible = false
+	$CenterContainer/MenuCredits.visible = true
+
+
+func _on_keluar_pressed() -> void:
+	get_tree().keluar()
+
+
+func _on_kembali_pressed() -> void:
+	$CenterContainer/mainButtons.visible = true
+	$CenterContainer/MenuPengaturan.visible = false
+	$CenterContainer/MenuCredits.visible = false
+
+
+func _on_tampilan_penuh_toggled(toggled_on: bool) -> void:
+	if toggled_on :
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
+"
 
 [sub_resource type="FontFile" id="FontFile_ekxnf"]
 cache/0/70/0/ascent = 0.0
@@ -46,10 +80,9 @@ bg_color = Color(0, 0.176471, 0.529412, 1)
 
 [node name="MainMenu" type="Node2D"]
 position = Vector2(86, 97)
-script = ExtResource("1_l6cm7")
+script = SubResource("GDScript_l6cm7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_left = -88.0
 offset_top = -97.0
 offset_right = 1193.0

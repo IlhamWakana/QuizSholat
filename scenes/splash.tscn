@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://c7guqbddu3sbt"]
+[gd_scene format=3 uid="uid://c6dw3fyxd5okv"]
 
 [node name="Splash" type="Node2D"]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 1282.0
-offset_bottom = 720.0
+offset_bottom = 718.0
 size_flags_horizontal = 0
 size_flags_vertical = 4

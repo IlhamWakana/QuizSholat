@@ -52,49 +52,70 @@ texture = ExtResource("1_ny833")
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 417.0
-offset_top = 317.0
+offset_top = 218.0
 offset_right = 856.0
-offset_bottom = 715.0
+offset_bottom = 699.0
 focus_mode = 2
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_lgvwx")
-text = "Doa ..."
+text = "
+Doa Supaya Dimudahkan
+
+"
 
 [node name="Button2" type="Button" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_n0kt5")
-text = "Doa...."
+text = "
+Doa Sapu Jagad
+
+"
 
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_kj6lv")
-text = "Doa...."
+text = "
+Doa Sebelum Tidur
+
+"
 
 [node name="Button4" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_4tih6")
-text = "Doa ...."
+text = "
+Doa Sebelum Makan
+
+"
 
 [node name="Button5" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_lsu1g")
-text = "Doa.."
+text = "
+Doa Untuk Kedua Orang Tua
+
+"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1138.0
-offset_top = 705.0
-offset_right = 1267.0
-offset_bottom = 752.0
+offset_left = 1136.0
+offset_top = 655.0
+offset_right = 1265.0
+offset_bottom = 702.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_qxqk7")
 text = "Kembali"
 
 [node name="Title" type="Label" parent="."]
 modulate = Color(0.165449, 0.917895, 0.847634, 1)
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 1278.0
@@ -119,3 +140,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="GridContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="GridContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="GridContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_buttonkembali_pressed"]

@@ -10,6 +10,7 @@ extends Control
 @onready var CorrectAnswer = $CorrectAnswer
 @onready var OKButton = $OK
 @onready var Congratulation = $Correct
+@onready var Kembali = $KembaliButton
 
 var items: Array
 var item: Dictionary
@@ -36,6 +37,7 @@ func show_questions():
 	QuestionImage.show()
 	ScoreNumber.show()
 	RestartButton.hide()
+	Kembali.hide()
 	AnswersList.clear()
 	WrongNumber.show()
 	item = items[index_item]
@@ -62,6 +64,7 @@ func show_result():
 	RestartButtonAlways.hide()
 	WrongNumber.show()
 	ScoreNumber.show()
+	Kembali.show()
 	
 	var percentage = round(correct/items.size()*100)
 	var greet
@@ -99,6 +102,7 @@ func show_congratulations():
 	AnswersList.hide()
 	ScoreNumber.show()
 	RestartButton.hide()
+	Kembali.hide()
 	QuestionImage.hide()
 	CorrectAnswer.show()
 	OKButton.hide()
@@ -126,5 +130,5 @@ func _on_answers_list_item_selected(index):
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
 
-func _on_button_pressed():
+func _on_kembali_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/pilihan.tscn")

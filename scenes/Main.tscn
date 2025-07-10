@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb7jbbuaq8ich"]
+[gd_scene load_steps=10 format=3 uid="uid://bb7jbbuaq8ich"]
 
 [ext_resource type="Script" uid="uid://cvyhsqh1hlf73" path="res://scenes/Main.gd" id="1_wuq2g"]
+[ext_resource type="Texture2D" uid="uid://crrvekwreexax" path="res://assets/Stylized Nature MegaKit[Standard]/Preview_3.jpg" id="2_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://ct0730xrvvcei" path="res://assets/images/01.png" id="2_nu2dp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxtc6"]
@@ -32,11 +33,15 @@ grow_vertical = 2
 script = ExtResource("1_wuq2g")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 719.0
+layout_mode = 1
+offset_left = -267.0
+offset_top = -3.0
+offset_right = 1653.0
+offset_bottom = 1077.0
+texture = ExtResource("2_0bbpv")
 
 [node name="BG_ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,7 +92,7 @@ theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_0bbpv")
 text = "Mulai Lagi"
 
-[node name="Button" type="Button" parent="."]
+[node name="KembaliButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 379.0
@@ -235,7 +240,7 @@ text = "Mantap!! Kamu benar sekali"
 
 [connection signal="item_selected" from="AnswersList" to="." method="_on_answers_list_item_selected"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="KembaliButton" to="." method="_on_kembali_button_pressed"]
 [connection signal="pressed" from="RestartButtonAlways" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Correct" to="." method="_on_correct_pressed"]
