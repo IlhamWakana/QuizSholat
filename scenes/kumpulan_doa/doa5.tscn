@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd7xiwrextbr"]
+[gd_scene load_steps=7 format=3 uid="uid://dd7xiwrextbr"]
 
+[ext_resource type="Script" uid="uid://bfjer4urrorvt" path="res://scripts/kumpulan_doa/doa5.gd" id="1_f6lf6"]
 [ext_resource type="Texture2D" uid="uid://bmny460v480xh" path="res://assets/images/Doa (5).png" id="1_q0y7s"]
+[ext_resource type="AudioStream" uid="uid://c2prxlxu5dkfg" path="res://assets/audio/Doa-doa/Doa untuk ortu.mp3" id="3_p5lbl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5lbl"]
+bg_color = Color(0.623529, 0.72549, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4y4y"]
+bg_color = Color(0.623529, 0.72549, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kabhq"]
+bg_color = Color(0.622522, 0.726532, 0.314564, 1)
 
 [node name="Doa5" type="Control"]
 layout_mode = 3
@@ -9,6 +20,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f6lf6")
+
+[node name="player_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(760, 654)
+stream = ExtResource("3_p5lbl")
+volume_db = 10.642
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -18,3 +36,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_q0y7s")
+
+[node name="pause" type="Button" parent="."]
+offset_left = 936.0
+offset_top = 654.0
+offset_right = 1020.0
+offset_bottom = 695.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p5lbl")
+text = "Pause"
+
+[node name="play" type="Button" parent="."]
+offset_left = 847.0
+offset_top = 654.0
+offset_right = 933.0
+offset_bottom = 695.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4y4y")
+text = "Putar"
+
+[node name="kembali" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 654.0
+offset_right = 1109.0
+offset_bottom = 695.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kabhq")
+text = "Kembali"

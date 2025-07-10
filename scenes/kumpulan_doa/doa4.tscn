@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://3hkkuclq767b"]
+[gd_scene load_steps=7 format=3 uid="uid://3hkkuclq767b"]
 
 [ext_resource type="Texture2D" uid="uid://bv5tlpo01wfjl" path="res://assets/images/Doa (4).png" id="1_c6y1r"]
+[ext_resource type="Script" uid="uid://1m4wj1xba4xh" path="res://scripts/kumpulan_doa/doa4.gd" id="1_oj40i"]
+[ext_resource type="AudioStream" uid="uid://cq2f7h68w2u4e" path="res://assets/audio/Doa-doa/Doa sebelum makan.mp3" id="3_o4ckq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4ckq"]
+bg_color = Color(0.623529, 0.72549, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4s18l"]
+bg_color = Color(0.623529, 0.72549, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihm2d"]
+bg_color = Color(0.622522, 0.726532, 0.314564, 1)
 
 [node name="Doa4" type="Control"]
 layout_mode = 3
@@ -9,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oj40i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -18,3 +30,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_c6y1r")
+
+[node name="player_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(760, 654)
+stream = ExtResource("3_o4ckq")
+volume_db = 10.642
+autoplay = true
+
+[node name="pause" type="Button" parent="."]
+offset_left = 936.0
+offset_top = 654.0
+offset_right = 1020.0
+offset_bottom = 695.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4ckq")
+text = "Pause"
+
+[node name="play" type="Button" parent="."]
+offset_left = 847.0
+offset_top = 654.0
+offset_right = 933.0
+offset_bottom = 695.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4s18l")
+text = "Putar"
+
+[node name="kembali" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 654.0
+offset_right = 1109.0
+offset_bottom = 695.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ihm2d")
+text = "Kembali"
